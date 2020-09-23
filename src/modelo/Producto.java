@@ -1,10 +1,12 @@
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Kevin Sandoval
  */
-public class Producto {
+public class Producto implements Serializable {
 
     public Producto(String AtrNombre, String AtrCodigo, int AtrCantidad, double AtrPrecio, double AtrPrecioVenta) {
         this.AtrNombre = AtrNombre;
@@ -12,6 +14,10 @@ public class Producto {
         this.AtrCantidad = AtrCantidad;
         this.AtrPrecio = AtrPrecio;
         this.AtrPrecioVenta = AtrPrecioVenta;
+    }
+    
+    public Producto() {
+        
     }
 
     @Override
@@ -43,9 +49,9 @@ public class Producto {
     
    
 
-    private final String AtrNombre;
-    private final String AtrCodigo;
-    private final int AtrCantidad;
-    private final double AtrPrecio;
-    private final double AtrPrecioVenta;
+    private String AtrNombre;
+    private String AtrCodigo;
+    private int AtrCantidad;
+    private double AtrPrecio;
+    private double AtrPrecioVenta;
 }
