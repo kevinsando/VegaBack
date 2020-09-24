@@ -29,9 +29,9 @@ public class adminExistencias {
      *
      * @return
      */
-    public List<Producto> listarProductos(){
+    public List<Producto> listarProductos(){//Busca en la bd los productos
         List<Producto> productos = new ArrayList<>();
-        productos.add(new Producto("1", "1", 0, 0, 0));
+        productos.add(new Producto("1", "1", 0, 0, 0,"","",""));
         
         return productos;
     }

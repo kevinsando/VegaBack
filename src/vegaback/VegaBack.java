@@ -1,7 +1,8 @@
 package vegaback;
 
 import accessData.adminExistencias;
-import accessData.adminExsProds;
+import accessData.adminExistencias;
+import accessData.adminVendidos;
 
 /**
  *
@@ -13,9 +14,18 @@ public class VegaBack {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       adminExsProds a = new adminExsProds();
-  
-       a.listarProductos();
+        adminExistencias a = new adminExistencias();
+        adminVendidos ap = new adminVendidos();
+        
+        
+        System.out.println(a.listarProductos());
+
+        System.out.println(ap.listarProductos());
+        System.out.println("Mas vendidos:");
+        System.out.println(ap.listarMasVendidos(ap.listarProductos()));
+        
+        System.out.println("Menos vendidos:");
+        System.out.println(ap.listarMenosVendidos(ap.listarProductos()));
     }
-    
+
 }
