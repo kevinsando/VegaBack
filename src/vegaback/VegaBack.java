@@ -14,18 +14,18 @@ public class VegaBack {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        adminExistencias a = new adminExistencias();
-        adminVendidos ap = new adminVendidos();
+        adminExistencias a = adminExistencias.getInstance();
+        adminVendidos ap = adminVendidos.getInstance();
         
         System.out.println("Existencias:");
         System.out.println(a.listarProductos());
         System.out.println("=================================================");
-        System.out.println(ap.listarProductos());
+        System.out.println(ap.listarVendidos("20/05/2020", "20/05/2020"));
         System.out.println("Mas vendidos:");
-        System.out.println(ap.listarMasVendidos(ap.listarProductos()));
+        System.out.println(ap.listarMasVendidos("20/05/2020", "20/05/2020"));
         
         System.out.println("Menos vendidos:");
-        System.out.println(ap.listarMenosVendidos(ap.listarProductos()));
+        System.out.println(ap.listarMenosVendidos("20/05/2020", "20/05/2020"));
     }
 
 }

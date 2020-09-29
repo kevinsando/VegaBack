@@ -10,7 +10,7 @@ import modelo.Producto;
  */
 public class adminExistencias {
 
-    public adminExistencias() {
+    private adminExistencias() {
     }
 
     public static adminExistencias getInstance() {
@@ -25,6 +25,7 @@ public class adminExistencias {
         productos.add(new Producto("1", "1", 1, 1, 1,"1","1","1"));
         productos.add(new Producto("2", "2", 2, 2, 2,"2","2","2"));
         productos.add(new Producto("3", "3", 3, 3, 3,"3","3","3"));
+        productos.add(new Producto("4", "4", 4, 4, 4,"4","4","4"));
         
         return productos;
     }

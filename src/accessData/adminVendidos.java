@@ -10,16 +10,16 @@ import modelo.Producto;
  */
 public class adminVendidos {
 
-    public adminVendidos() {
+    private adminVendidos() {
     }
-    public static Object getInstance() {
+    public static adminVendidos getInstance() {
         if (instance == null) {
             instance = new adminVendidos();
         }
         return instance;
     }
     
-    public List<Producto> listarProductos(){//Busca en la bd los productos
+    public List<Producto> listarVendidos(String finicio, String ffinal){//Busca en la bd los productos
         List<Producto> productos = new ArrayList<>();
         
         for(int i=0;i<10;i++){
@@ -28,16 +28,18 @@ public class adminVendidos {
         return productos;
     }
     
-    public List<Producto> listarMasVendidos(List productos){
+    public List<Producto> listarMasVendidos(String finicio, String ffinal){
         List<Producto> vendidos = new ArrayList<>();
+        List<Producto> productos = this.listarVendidos(finicio, ffinal);
         for(int i=0;i<5;i++){
             vendidos.add((Producto) productos.get(i));
         }
         return vendidos;
     }
     
-    public List<Producto> listarMenosVendidos(List productos){
+    public List<Producto> listarMenosVendidos(String finicio, String ffinal){
         List<Producto> vendidos = new ArrayList<>();
+        List<Producto> productos = this.listarVendidos(finicio, ffinal);
         for(int i=(productos.size()-5);i<productos.size();i++){
             vendidos.add((Producto) productos.get(i));
         }
