@@ -8,6 +8,10 @@ import java.io.Serializable;
  */
 public class Producto implements Serializable {
 
+    public Producto() {
+        
+    }
+    
     public Producto(String AtrNombre, String AtrCodigo, int AtrCantidad, double AtrPrecio, 
             double AtrPrecioVenta, String AtrDescripcion, String AtrGrupo, String AtrFabricante) {
         this.AtrNombre = AtrNombre;
