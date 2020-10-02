@@ -3,6 +3,7 @@ package accessData;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Producto;
+import modelo.Vendido;
 
 /**
  *
@@ -19,29 +20,34 @@ public class adminVendidos {
         return instance;
     }
     
-    public List<Producto> listarVendidos(String finicio, String ffinal){//Busca en la bd los productos
-        List<Producto> productos = new ArrayList<>();
-        
-        for(int i=0;i<10;i++){
-            productos.add(new Producto("1", "1", i, i, i,"","",""));
-        }
-        return productos;
-    }
-    
-    public List<Producto> listarMasVendidos(String finicio, String ffinal){
-        List<Producto> vendidos = new ArrayList<>();
-        List<Producto> productos = this.listarVendidos(finicio, ffinal);
-        for(int i=0;i<5;i++){
-            vendidos.add((Producto) productos.get(i));
+    public List<Vendido> listarVendidos(){//Busca en la bd los productos
+        List<Producto> productos = adminExistencias.getInstance().listarProductos();
+        List<Vendido> vendidos = new ArrayList<>();
+        String codigo = " ";
+        String fecha=" ";
+        for(int i=0;i<productos.size();i++){
+            Producto aux = productos.get(i);
+            if(!codigo.equals(aux.getAtrCodigo())){
+                vendidos.add(new Vendido(fecha,aux.getAtrNombre() ,aux.getAtrCodigo()));
+            }
         }
         return vendidos;
     }
     
-    public List<Producto> listarMenosVendidos(String finicio, String ffinal){
-        List<Producto> vendidos = new ArrayList<>();
-        List<Producto> productos = this.listarVendidos(finicio, ffinal);
+    public List<Vendido> listarMasVendidos(){
+        List<Vendido> productos = this.listarVendidos();
+        List<Vendido> vendidos = new ArrayList<>();
+        for(int i=0;i<5;i++){
+            vendidos.add((Vendido) productos.get(i));
+        }
+        return vendidos;
+    }
+    
+    public List<Vendido> listarMenosVendidos(){
+        List<Vendido> vendidos = new ArrayList<>();
+        List<Vendido> productos = this.listarVendidos();
         for(int i=(productos.size()-5);i<productos.size();i++){
-            vendidos.add((Producto) productos.get(i));
+            vendidos.add((Vendido) productos.get(i));
         }
         return vendidos;
     }

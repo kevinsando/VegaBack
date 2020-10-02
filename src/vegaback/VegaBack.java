@@ -1,7 +1,6 @@
 package vegaback;
 
 import accessData.adminExistencias;
-import accessData.adminExistencias;
 import accessData.adminVendidos;
 
 /**
@@ -20,12 +19,13 @@ public class VegaBack {
         System.out.println("Existencias:");
         System.out.println(a.listarProductos());
         System.out.println("=================================================");
-        System.out.println(ap.listarVendidos("20/05/2020", "20/05/2020"));
+        System.out.println(ap.listarVendidos());
+        System.out.println("=================================================");
         System.out.println("Mas vendidos:");
-        System.out.println(ap.listarMasVendidos("20/05/2020", "20/05/2020"));
+        System.out.println(ap.listarMasVendidos());
         
         System.out.println("Menos vendidos:");
-        System.out.println(ap.listarMenosVendidos("20/05/2020", "20/05/2020"));
+        System.out.println(ap.listarMenosVendidos());
     }
 
 }
