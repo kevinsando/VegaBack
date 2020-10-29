@@ -64,10 +64,11 @@ public class adminExistencias {
     public Producto getCantidad(String nomCod) {
         List<Producto> productos = this.listarProductos();
         Producto prod = null;
-        System.out.println(nomCod.toString());
+        System.out.println("Admin: "+nomCod.toString());
         for (int i = 0; i < productos.size(); i++) {
-            if (nomCod.equals(productos.get(i).getAtrCodigo()) || nomCod.equals(productos.get(i).getAtrNombre())) {
+            if (nomCod.equals(productos.get(i).getAtrCodigo())) {
                 prod = productos.get(i);
+            } else {
             }
         }
         return prod;
